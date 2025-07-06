@@ -3,7 +3,7 @@ Installation Procedure:
   2) clone this folder inside the environment
   3) cd into this folder inside the environment
   4) run "pip install -r requirements.txt"
-  5) pip install python-whois
+  5) pip install whois
   6) The basic_recon python file can be run now
 
 Usage Guidelines:
