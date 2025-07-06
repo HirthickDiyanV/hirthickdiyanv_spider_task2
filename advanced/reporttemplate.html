@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recon Report - {{ domain }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        h1 { color: #333; }
+        .section { border: 1px solid #ccc; padding: 10px; margin-bottom: 20px; border-radius: 5px; }
+        .collapsible {
+            background-color: #eee;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .content { padding: 0 10px; display: none; overflow: hidden; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #999; padding: 8px; text-align: left; }
+        .block {border-top: 1px solid #ccc; padding: 10px 0; }
+        .block:first-child {border-top: none; }
+    </style>
+</head>
+<body>
+    <h1>Recon Report for {{ domain }}</h1>
+
+    {% for section, content in report.items() %}
+    <div class="section">
+        <button class="collapsible">{{ section | capitalize }}</button>
+        <div class="content">
+            {% if content is string %}
+                <pre>{{ content }}</pre>
+            {% elif content is mapping %}
+                <table>
+                    <thead><tr><th>Key</th><th>Value</th></tr></thead>
+                    <tbody>
+                    {% for key, value in content.items() %}
+                        <tr>
+                            <td>{{ key }}</td>
+                            <td>
+                                {% if value is iterable and not value is string %}
+                                    <ul>
+                                    {% for item in value %}
+                                        <li>{{ item }}</li>
+                                    {% endfor %}
+                                    </ul>
+                                {% else %}
+                                    {{ value }}
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% elif content is iterable %}
+                <ul>
+                {% for item in content %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <pre>{{ content }}</pre>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+
+    <script>
+        const coll = document.getElementsByClassName("collapsible");
+        for (let i = 0; i < coll.length; i++) {
+            coll[i].onclick = function() {
+                this.classList.toggle("active");
+                const content = this.nextElementSibling;
+                content.style.display = (content.style.display === "block") ? "none" : "block";
+            };
+        }
+    </script>
+</body>
+</html>
