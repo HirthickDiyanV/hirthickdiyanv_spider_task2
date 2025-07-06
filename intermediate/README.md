@@ -5,7 +5,7 @@ Installation Procedure:
   4) run "pip install -r requirements.txt"
   5) pip install whatweb
   6) pip install python-nmap
-  7) pip install python-whois
+  7) pip install whois
   8) The basic_recon python file can be run now
 
 Usage Guidelines: 
