@@ -32,3 +32,5 @@ Usage Guidelines:
     --output         Output file (JSON)
     --all            All flags are enabled
 
+  Example:
+    intermediate_recon.py --dns --output google.com
