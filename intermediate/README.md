@@ -6,7 +6,8 @@ Installation Procedure:
   5) pip install whatweb
   6) pip install python-nmap
   7) pip install whois
-  8) The basic_recon python file can be run now
+  8) pip install theharvester
+  9) The basic_recon python file can be run now
 
 Usage Guidelines: 
   intermediate_recon.py [-h] [--subdo] [--dns] [--whois] [--headers] [--robotssitemap] [--geoip] [--portscan] [--techdetect] [--emails] [--shodan] [--output] [--all] domain
