@@ -96,8 +96,8 @@ def main():
 
     parser.add_argument("--subdo", action="store_true", help="Enumerates Subdomains")
     parser.add_argument("--dns", action="store_true", help="Finds DNS Info")
-    parser.add_argument("--whois", action="store_true")
-    parser.add_argument("--headers", action="store_true")
+    parser.add_argument("--whois", action="store_true", help="Finds whois output for the given domain")
+    parser.add_argument("--headers", action="store_true", help="Finds header info about the given domain")
     parser.add_argument("--robotssitemap", action="store_true", help="Extracts robots.txt and sitemap.xml file from the domain")
     parser.add_argument("--geoip", action="store_true", help="Extracts the geoip info of the domain")
     parser.add_argument("--all", action="store_true", help="All flags are enabled")
