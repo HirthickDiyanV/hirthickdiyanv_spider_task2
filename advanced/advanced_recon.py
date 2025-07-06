@@ -47,7 +47,7 @@ def whoispy(domain):
         return w.text
     except Exception:
         try:
-            result = subprocess.run(["whois", domain], capture_output=True, text=True, shell=True)
+            result = subprocess.run(["whois", domain], capture_output=True, text=True)
             r=result.stdout
             r=r.split("\n")
             r=r[60:87]
