@@ -1,10 +1,21 @@
-FROM python:3.11-slim
+FROM python:3.12-slim
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        whois \
+        nmap \
+        curl \
+        dnsutils \
+        iputils-ping \
+        build-essential \
+        gcc \
+        git \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY . /app
 WORKDIR /app
-COPY . .
+
 RUN pip install --no-cache-dir -r requirements.txt
-RUN apt-get update && apt-get install -y nmap whatweb wafw00f
-RUN pip install python-whois
-RUN pip install whois
-RUN pip install theharvester
-RUN pip install whoisdomain
+
 ENTRYPOINT ["python", "advanced_recon.py"]
