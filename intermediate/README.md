@@ -1,23 +1,25 @@
-Installation Procedure:
-  1) Create a virtual environment
-  2) clone this folder inside the environment
-  3) cd into this folder inside the environment
-  4) run "pip install -r requirements.txt"
-  5) pip install whatweb
-  6) pip install python-nmap
-  7) pip install whois
-  8) pip install theharvester
-  9) The intermediate_recon python file can be run now
+#Installation Procedure:
+ 
+    1) Create a virtual environment
+    2) clone this folder inside the environment
+    3) cd into this folder inside the environment
+    4) run "pip install -r requirements.txt"
+    5) pip install whatweb
+    6) pip install python-nmap
+    7) pip install whois
+    8) pip install theharvester
+    9) The intermediate_recon python file can be run now
 
-Usage Guidelines: 
-  intermediate_recon.py [-h] [--subdo] [--dns] [--whois] [--headers] [--robotssitemap] [--geoip] [--portscan] [--techdetect] [--emails] [--shodan] [--output] [--all] domain
+#Usage Guidelines: 
 
-  "Intermediate Recon Toolkit"
-  
-  Positional arguments:
+    intermediate_recon.py [-h] [--subdo] [--dns] [--whois] [--headers] [--robotssitemap] [--geoip] [--portscan] [--techdetect] [--emails] [--shodan] [--output] [--all] domain
+
+##Positional arguments:
+
     domain           Target domain name
   
-  Options:
+##Options:
+
     -h, --help       show this help message and exit
     --subdo          Enumerates Subdomains
     --dns            Finds DNS Info
@@ -33,5 +35,6 @@ Usage Guidelines:
     --output         Output file (JSON)
     --all            All flags are enabled
 
-  Example:
+##Example:
+
     intermediate_recon.py --dns --output google.com
