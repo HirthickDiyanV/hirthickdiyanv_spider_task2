@@ -1,0 +1,25 @@
+FROM python:3.12-slim
+
+# Install essential apt packages
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        whois \
+        nmap \
+        curl \
+        dnsutils \
+        iputils-ping \
+        build-essential \
+        gcc \
+        git \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy code into the container
+COPY . /app
+WORKDIR /app
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Default command
+ENTRYPOINT ["python", "advanced_recon.py"]

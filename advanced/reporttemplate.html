@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Recon Report: {{ domain }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f9f9f9; padding: 20px; }
+        details { margin-bottom: 1rem; background: #fff; border: 1px solid #ccc; padding: 10px; border-radius: 8px; }
+        summary { font-weight: bold; cursor: pointer; }
+        pre { background: #eee; padding: 10px; border-radius: 5px; white-space: pre-wrap; word-wrap: break-word; }
+    </style>
+</head>
+<body>
+    <h1>Recon Report for {{ domain }}</h1>
+
+    {% macro render_value(value) %}
+        {% if value is string %}
+            <pre>{{ value | e }}</pre>
+        {% elif value is mapping %}
+            <ul>
+            {% for k, v in value.items() %}
+                <li><strong>{{ k }}</strong>: {{ render_value(v) }}</li>
+            {% endfor %}
+            </ul>
+        {% elif value is iterable and not value is string %}
+            <ul>
+            {% for item in value %}
+                <li>{{ render_value(item) }}</li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            {{ value }}
+        {% endif %}
+    {% endmacro %}
+
+    {% for key, value in report.items() %}
+        <details open>
+            <summary><strong>{{ key }}</strong></summary>
+            {{ render_value(value) }}
+        </details>
+        <hr>
+    {% endfor %}
+
+</body>
+</html>
