@@ -1,4 +1,5 @@
 Installation Procedure:
+
   Way 1:
     1) Create a virtual environment
     2) clone this folder inside the environment
@@ -17,6 +18,7 @@ Installation Procedure:
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*"
      6) The advanced_recon python file can be run now
+     
     Way 2:
      1) install docker
      2) clone this folder
