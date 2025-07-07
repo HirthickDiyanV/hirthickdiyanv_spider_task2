@@ -1,6 +1,7 @@
 Installation Procedure:
 
   Way 1:
+  
     1) Create a virtual environment
     2) clone this folder inside the environment
     3) cd into this folder inside the environment
