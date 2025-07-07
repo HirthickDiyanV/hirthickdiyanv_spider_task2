@@ -1,4 +1,4 @@
-#Installation Procedure:
+# Installation Procedure:
  
     1) Create a virtual environment
     2) clone this folder inside the environment
@@ -10,15 +10,15 @@
     8) pip install theharvester
     9) The intermediate_recon python file can be run now
 
-#Usage Guidelines: 
+# Usage Guidelines: 
 
     intermediate_recon.py [-h] [--subdo] [--dns] [--whois] [--headers] [--robotssitemap] [--geoip] [--portscan] [--techdetect] [--emails] [--shodan] [--output] [--all] domain
 
-##Positional arguments:
+## Positional arguments:
 
     domain           Target domain name
   
-##Options:
+## Options:
 
     -h, --help       show this help message and exit
     --subdo          Enumerates Subdomains
@@ -35,6 +35,6 @@
     --output         Output file (JSON)
     --all            All flags are enabled
 
-##Example:
+## Example:
 
     intermediate_recon.py --dns --output google.com
