@@ -1,7 +1,7 @@
-#Installation Procedure:
+# Installation Procedure:
 
 
-##Way 1: 
+## Way 1: 
 
     1) Create a virtual environment 
     2) clone this folder inside the environment 
@@ -21,7 +21,7 @@
       && rm -rf /var/lib/apt/lists/*"
      6) The advanced_recon python file can be run now
   
-##Way 2: 
+## Way 2: 
 
      1) install docker
      2) clone this folder
@@ -30,17 +30,17 @@
      5) run "docker run advanced_recon"
      6) now the advanced_recon.py can be run through docker
      
-#Usage Guidelines: 
+# Usage Guidelines: 
 
-##Syntax:
+## Syntax:
 
       advanced_recon.py [-h] [--subdo] [--dns] [--whois] [--headers] [--robotssitemap] [--geoip] [--portscan] [--techdetect] [--emails] [--shodan] [--shodan-key SHODAN_KEY] [--waf] [--output] [--all] domain
     
-##Positional arguments:
+## Positional arguments:
 
       domain                Target domain name 
       
-  ##Options:
+  ## Options:
   
       -h, --help            show this help message and exit
       --subdo               Enumerates Subdomains 
@@ -58,6 +58,6 @@
       --output              Output file (JSON) and (HTML)
       --all                 All flags are enabled
     
-  ##Example:
+  ## Example:
   
     advanced_recon.py --dns --output google.com
