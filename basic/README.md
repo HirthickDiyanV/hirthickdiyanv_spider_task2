@@ -1,4 +1,4 @@
-#Installation Procedure:
+# Installation Procedure:
 
     1) Create a virtual environment
     2) clone this folder inside the environment
@@ -7,17 +7,17 @@
     5) pip install whois
     6) The basic_recon python file can be run now
 
-#Usage Guidelines:
+# Usage Guidelines:
 
-##Syntax:
+## Syntax:
 
     basic_recon.py [-h] [--subdo] [--dns] [--whois] [--headers] [--robotssitemap] [--geoip] [--all] domain
 
-##Positional arguments:
+## Positional arguments:
 
     domain           Target domain name
   
-##Options:
+## Options:
 
     -h, --help       show this help message and exit
     --subdo          Enumerates Subdomains
@@ -28,6 +28,6 @@
     --geoip          Extracts the geoip info of the domain
     --all            All flags are enabled
 
-##Example:
+## Example:
 
     basic_recon.py --subdo google.com
